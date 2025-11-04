@@ -34,11 +34,17 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
-    name: Deploy
+  checkout:
+    name: checkout code
     runs-on: ubuntu-latest
     environment: production
 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+  build:
+    steps:
+    - name: maven build
+      uses: mvn clean package
+    
