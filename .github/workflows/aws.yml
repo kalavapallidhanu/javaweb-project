@@ -49,8 +49,6 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
     - name: build with maven
-      run: |
-        mvn clean package
-        mvn run build
+      run: mvn -B clean package
 
     
